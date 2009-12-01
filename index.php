@@ -1,1 +1,1 @@
-<?php header('Location: /advent2008.php'); ?>
+<?php header('Location: /advent2009.php'); ?>

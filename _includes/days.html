@@ -1,0 +1,15 @@
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+{% for i in (1..25) %}
+{% assign name = i | prepend: '00' | slice: -2, 2 %}
+{% if page.days contains i %}
+<td><a href="#" onClick="MM_nbGroup('down','group1','Day{{ name }}','/images/{{ page.year }}/days/{{ name }}_d.gif',1);MM_swapImage('Photo','', '/images/{{ page.year }}/photos/{{ name }}.jpg',1);MM_setTextOfLayer('Caption','', photoCaptions[{{ i }}]);return false;"><img src="/images/{{ page.year }}/days/{{ name }}_o.gif" name="Day{{ name }}" width="18" height="18" border="0" id="Day{{ name }}" alt="{{ name }}"></a></td>
+{% else %}
+<td><img src="/images/{{ page.year }}/days/{{ name }}.gif" width="18" height="18" border="0" alt="{{ name }}"></td>
+{% endif %}
+{% if i < 25 %}
+<td><img src="/images/shim/s.gif" width="2" height="18"></td>
+{% endif %}
+{% endfor %}
+</tr>
+</table>

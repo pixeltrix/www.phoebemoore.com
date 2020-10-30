@@ -1,0 +1,7 @@
+title: Phoebe Moore
+url: https://www.pheobemoore.com
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CNAME

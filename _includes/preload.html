@@ -1,0 +1,27 @@
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+  var photoCaptions = new Array();
+
+  {% for i in (1..25) -%}
+  {% if page.captions[i] -%}
+    photoCaptions[{{ i }}] = "{{ page.captions[i] }}";
+  {% else -%}
+    photoCaptions[{{ i }}] = "%26nbsp%3B";
+  {% endif -%}
+  {% endfor %}
+  function PX_preloadImages() {
+    MM_preloadImages(
+    {% for i in (1..25) -%}
+    {% assign name = i | prepend: '00' | slice: -2, 2 -%}
+    {% if i < 25 -%}
+      '/images/{{ page.year }}/days/{{ name }}_d.gif',
+    {% else -%}
+      '/images/{{ page.year }}/days/{{ name }}_d.gif'
+    {% endif -%}
+    {% endfor -%}
+    );
+  }
+
+-->
+</script>
